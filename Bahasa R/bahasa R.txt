@@ -1,0 +1,169 @@
+R adalah sebuah nama bahasa pemrograman sekaligus software untuk pengolahan data dan grafik. R sangat populer karena memiliki jumlah fitur yang sangat besar, mencapai puluhan ribu fitur. Mulai dari membaca file teks, membaca database, menghasilkan berbagai grafik, menghasilkan dashboard yang menarik, sampai ke penggunaan mechine learning.
+
+4 Alasan utama data scientist menggunakan R :
+1) Lebih mudah dipelajari (Easier) 
+2) Lebih cepat (Faster) = R dapat menghasilkan berbagai visualisasi yang menarik dalam waktu singkat sehingga data scientist dapat jauh lebih produktif dalam memahami data dan menghasilkan informasi
+3) Lebih kaya fitur (Richer) = Puluhan ribu fitur
+4) Telah terbukti (Proven) = R sudah digunakan oleh perusahaan besar seperti Anz, Ube, Facebook dan memberikan solusi riil
+
+-Variabel dalam R
+Penggunaan variabel pada pemrograman sangat penting untuk menampung angka maupun teks di R dengan suatu nama.
+[Contoh Code]
+a = 5
+print(a)
+[Hasil Run]
+5
+
+Huruf besar, huruf kecil, dan format angkat sangat perlu diperhatikan pada bahasa pemrograman R karena case sensitive.
+
+-Comment pada R
+Comment merupakan teks untuk menambahkan keterangan pada code kita, sehingga kita akan ingat apa yang dilakukan ketika membuka kembali code tersebut.
+Pada R penggunaan comment ditulis dengan tanda #.
+[Contoh Code]
+10 + 7 #ini adalah baris komentar
+[Hasil Run]
+17
+
+-Function
+Fungction adlaah perintah R yang memliki dan menerima beberapa nilai teks maupun angka sebagai parameternya. Function yang sering digunakan yaitu c. Fungsi c ini digunakan untuk membuat rangkaian angka.
+[Contoh Code]
+c(5, 10, 20)
+[Hasil Run]
+5 10 20
+Ini artinya Anda menyimpan nilai 5, 10, 20 dalam satu struktur. Dan jika Anda ingin menyimpan rangkaian angka terurut, misalkan angka 1 sampai dengan 5 dapat diketikkan sebagai berikut.
+[Contoh Code]
+c(1:5)
+[Hasil Run]
+1 2 3 4 5
+
+[Contoh Code]
+C(1:5)
+[Hasil Run]
+object not interpretable as a factor
+
+-Menggunakan Fungsi Summary
+Kekuatan di R adalah fungsi yang kaya, salah satunya adalah fungsi bernama "summary" yang bisa digunakan untuk mensimpulkan data yang lagi kita proses.
+[Contoh Code]
+summary(c(1:5))
+[Hasil Run]
+  Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      1       2       3       3       4       5 
+
+
+3 Tipe data yang paling sering digunakan di R, yaitu vector, list dan data frame.
+1) Vektor
+Vektor adalah jenis data di R dengan struktur yang menyimpan deretan nilai (lebih dari satu nilai) dengan tipe data sama. Vektor didefinisikan dengan nama function yang memiliki satu huruf saja: c. Sebagai contoh untuk membuat vector yang isinya angka dengan nilai 5, 10, 20 maka:
+[Contoh Code]
+c(5, 10, 20)
+[Hasil Run]
+5 10 20
+
+Vektor dengan isi teks:
+[Contoh Code]
+c(ida, ayu, vigi)
+[Hasil Run]
+ida ayu vigi
+
+Untuk mengambil isi vektor, Anda harus mengambil dari posisi indexnya. Cara penulisan index di variable adalah angka yang diapit dengan kurung siku tunggal atau ganda. Penulisan ini selanjutnya disebut sebagai accessor. Jika index yang ingin diambil lebih dari satu, maka hanya boleh menggunakan kurung siku tunggal.
+[Contoh Code]
+angka <- c(20:30)
+# Tampilkan isi variable angka pada posisi ke 3
+print(angka[3])
+# Tampilkan isi variable angka pada posisi ke 4 s/d 6
+print(angka[4:6])
+[Hasil Run]
+22
+24 25 26
+
+Selain dengan angka, indeks pada vektor juga dapat dilengkapi dengan nama untuk tiap elemennya dengan menggunakan format penulisan "name=value".
+[Contoh Code]
+nilai <- c(statistik = 89, fisika = 95, ilmukomunikasi = 100)
+print(nilai)
+[Hasil Run]
+statistik  fisika ilmukomunikasi 
+    89       95        100 
+
+2) List
+List adalah jenis data di R yang mirip dengan vektor, perbedaannya adalah list dapat menyimpan lebih dari satu jenis data. Untuk memasukkan isi ke dalam struktur data ini kita gunakan function "list".
+[Contoh Code]
+list(2, "Vigi", 4)
+print(list)
+[Hasil Run]
+2 "Vigi" 4
+
+3) Data Frame
+Data frame adalah jenis struktur data yang dirancang untuk representasi tabel, yang terdiri dari banyak kolom dengan tiap kolom berisi list ataupun vektor dengan jumlah data yang sama.
+Untuk membuat data frame kita bisa gunakan function data.frame
+[Contoh Code]
+fakultas <- c("Bisnis", "D3 Perhotelan", "ICT", "Ilmu Komunikasi", "Seni dan Desain")
+jumlah_mahasiswa <- c(260, 28, 284, 465, 735)
+akreditas <- c("A", "A", "B", "A", "A")
+info_mahasiswa <- data.frame(fakultas, jumlah_mahasiswa, akreditas)
+info_mahasiswa
+[Hasil Run]
+         fakultas jumlah_mahasiswa akreditas
+1          Bisnis              260         A
+2   D3 Perhotelan               28         A
+3             ICT              284         B
+4 Ilmu Komunikasi              465         A
+5 Seni dan Desain              735         A
+
+Cara akses data frame yaitu dengan menggunakan accessor dengan tanda $ yang diikuti dengan nama kolom.
+[Contoh Code]
+info_mahasiswa$jumlah_mahasiswa
+[Hasil Run]
+260  28 284 465 735
+
+
+Package ggplot2
+Untuk menghasilkan grafik.
+[Contoh Code]
+fakultas <- c("Bisnis", "D3 Perhotelan", "ICT", "Ilmu Komunikasi", "Seni dan Desain")
+jumlah_mahasiswa <- c(260, 28, 284, 465, 735)
+akreditasi <- c("A","A","B","A","A")
+
+info_mahasiswa <- data.frame(fakultas, jumlah_mahasiswa, akreditasi)
+#Menggunakan package ggplot2
+library("ggplot2")
+#Membuat kanvas
+gambar <- ggplot(info_mahasiswa, aes(x=fakultas, y=jumlah_mahasiswa, fill=fakultas))
+gambar <- gambar + geom_bar(width=1, stat="identity")
+gambar
+[Hasil Run]
+--Grafik--
+
+Bagaimana grafik ini dihasilkan di ggplot?  Seperti informasi sebelumnya, grafik ini digambar lapis demi lapis. Dan lapisan pertama kita ibaratkan sebagai "kanvas" lukisan, dan untuk membuat "kanvas" pada contoh di code editor, kita gunakan fungsi yang namanya ggplot. 
+[Contoh Code]
+gambar <- ggplot(info_mahasiswa, aes(x=fakultas, y=jumlah_mahasiswa, fill=fakultas))
+
+Disini terlihat hasil ggplot2 disimpan pada variable gambar. Variable ini yang akan menyimpan seluruh grafik dan digunakan untuk menggambar ketika digunakan sendiri pada code editor.
+
+Penambahan bentuk, warna dan ukuran dilakukan dengan menggunakan tanda operator plus ( + ) diikuti fungsi terkait. Sebagai contoh, untuk menggambar bentuk bar chart di atas "kanvas" kita gunakan fungsi geom_barSebagai contoh, untuk menggambar bar chart di atas "kanvas" kita gunakan fungsi :
+[Contoh Code]
+#Membuat kanvas
+gambar <- ggplot(info_mahasiswa, aes(x=fakultas, y=jumlah_mahasiswa, fill=fakultas))
+#Menambahkan objek bar chart, simpan kembali sebagai variable gambar
+gambar <- gambar + geom_bar(width=1, stat="identity")
+#Menambahkan judul grafik
+gambar <- gambar + ggtitle("Jumlah Mahasiswa per Fakultas")
+#Menambahkan caption pada sumbu x
+gambar <- gambar + xlab("Nama Fakultas")
+#Menambahkan caption pada sumbu y
+gambar <- gambar + ylab("Jumlah Mahasiswa")
+
+Membaca File Excel
+[Contoh Code]
+#Menggunakan package ggplot2
+library(ggplot2)
+#Menggunakan package openxlsx
+library(openxlsx)
+
+#Membaca file mahasiswa.xlsx
+mahasiswa <- read.xlsx("https://academy.dqlab.id/dataset/mahasiswa.xlsx",sheet = "Sheet 1")
+
+#Menampilkan data
+print(mahasiswa)
+
+#Menampilkan kolom Prodi
+print(mahasiswa$Prodi)
+
