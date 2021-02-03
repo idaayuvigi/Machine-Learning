@@ -1,0 +1,74 @@
+Machine Learning adalah cabang AI yang menggunakan metode statiska untuk membuat komputer dapat mempelajari pola pada data tanpa perlu diprogram secara eksplisit. Deep Learning adalah cabang ML dengan algoritma jaringan syaraf tiruan yang dapat belajar dan beradaptasi terhadap sejumlah besar data.
+
+Jenis-jenis ML (Berdasarkan karakteristik data dan jenis supervisi yang didapatkan oleh program selama pelatihan) :
+1) Supervised Learning
+Dataset yang digunakan telah memiliki label dan algoritma kemudian mempelajari pola dari pasangan data dan label tersebut. Algoritma pada SL mudah dipahami dan performa akurasinya pun mudah diukur. SL dapat dilihat sebagai sebuah mesin/robot yang belajar menjawab pertanyaan sesuai dengan jawaban yang telah disediakan manusia.
+
+2) Unsupervised Learning
+Dataset yang digunakan tidak memiliki label. UL melakukan proses belajar sendiri untuk melabeli atau mengelompokkan data. UL dapat dilihat sebagai sebuah mesin/robot yang berusaha belajar menjawab pertanyaan secara mandiri tanpa ada jawaban yang disediakan manusia.
+
+3) Semi-supervised Learning
+Gabungan dari SL dan UL. Di sini dataset yang digunakan untuk pelatihan sebagian memiliki label dan sebagian tidak. Contohnya seperti Google Photos. Pada saat kita memberi tag atau label untuk setiap orang yang ada dalam sebuah foto kemudian ketika kita mengunggah foto baru dengan wajah orang yang sebelumnya sudah kita beri label maka Google Photos akan secara otomatis mengenali orang tersebut.
+
+4) Reinforcement Learning
+RL dikenal sebagai model yang belajar menggunakan sistem reward dan pinalti. RL adalah teknik yang mempelajari bagaimana membuat keputusan terbaik, secara berurutan, untuk memaksimalkan ukuran sukses kehidupan nyata. RL memiliki 4 komponen, yaitu : 
+-Action (Setiap keputusan yang diambil)
+Misalnya saat kita berkendara, action yang kita lakukan adalah mengendalikan kemudi, menginjak gas, dan mengerem.
+-Agent (Entitas yang membuat keputusan)
+Contohnya adalah perangkat lunak, robot, dan manusia.
+-Environtment (Sarana untuk berinteraksi, yang dapat menerima action dan memberikan respon berupa hasil maupun data berupa satu set observasi baru)
+-Reward (Diberikan saat agent berhasil menyelesaikan tantangan)
+Mekanisme feedback ini membuat agent belajar tentang tindakan mana yang menyebabkan kesuksessan (reward) atau kegagalan (pinalti).
+Keempat komponen ini merepresentasikan Markov Decision Process (MDP)
+
+Libary Populer pada Python untuk ML dan Data Science
+-NumPy : library untuk memproses larik atau array
+-Pandas : library untuk analisis dan manipulasi data yang membuat pemrosesan dan pembersihan data menjadi lebih mudah.
+Pandas mendukung banyak jenis data yang dapat dipakai dalam sebuah project ML. Berikut beberapa contoh data yang dapat diolah dengan pandas:
+>CSV (Comma Separated Value) : sebuah format data di mana elemen dari setiap baris dipisahkan dengan koma.
+> SQL (Structured Query Language) : data yang berasal dari relational database. Format data ini berisi sebuah tabel yang memiliki format data integer, string, float, dan biner.
+> Excel : berkas yang didapat dari spreadsheet seperti Microsoft Excel atau Google Spreadsheet. File Excel biasanya memuat data numerik.
+> SPSS (Statistical Package for the Social Science) : berkas dari perangkat lunak yang biasa dipakai untuk statistik dan pengolahan data. Berkas SPSS yang disimpan memiliki ekstensi .sav
+> JSON (Javascript Object Notation) : salah satu format data yang menggunakan sistem Key - Value di mana sebuah nilai disimpan dengan key tertentu untuk memudahkan mencari data.
+-Matplotlib : library untuk membuat plot atau visualisasi data dalam 2 dimensi yang mampu menghasilkan grafik dengan kualitas tinggi. Dapat dipakai untuk membuat plot seperti histogram, scatter plot, grafik batang, pie chart hanya dengan beberapa baris kode
+-Scikit Learn : library untuk klasifikasi, regresi, clustering, dimensionality reduction, dan pemrosesan data, dan juga dapat dipakai untuk analisis data.
+-Tensorflow : framework open source untuk ML yang digunakan oleh google. Memudahkan pembuatan model ML. Dapat dipakai untuk deep learning, computer vision, pemrosesan bahasa alami, serta RL
+-PyTorch : library yang dapat dipakai untuk masalah ML, computer vision, hingga pemrosesan bahasa alami
+-Keras : library deep learning dengan penggunaan yang minimalis dan simple yang dibangun di atas Tenserflow sehingga menjadikannya sebagai API dengan level lebih tinggi dari Tensorflow
+
+Tahapan pertama dari ML
+1) Data collection : proses pengumpulan data
+Ada 3 cara yang bisa kita lakukan untuk mengumpulkan data, yaitu:
+- Mengekstrasi data (misal dari internet, riset, survei, dll)
+- Mengumpulkan dan membuat dataset sendiri dari Nol
+- Menggunakan dataset yang telah ada
+
+Beberapa sumber dataset di Internet:
+- https://archive.ics.uci.edu/ml/index.php : kumpulan database, teori, dan generator data yang digunakan oleh komunitas ML untuk analisis algoritma ML
+- https://www.kaggle.com/datasets : memiliki 50.000 lebih publik dataset, baik dataset bersifat dummy ataupun riil
+- https://www.tensorflow.org/ : menyediakan data resources yang cukup lengkap di library-nya mulai dari audio data, images, text, vidio dll
+- https://data.go.id/ : merupakan kumpulan data yang dibuat oleh pemerintah Indonesia
+
+2) Data Cleaning : membersihkan dan mengatur data untuk meningkatkan kualitas data yang juga berpengaruh terhadap produktivitas kerja secara keseluruhan. https://towardsdatascience.com/the-ultimate-guide-to-data-cleaning-3969843991d4 atau https://www.kdnuggets.com/2019/06/7-steps-mastering-data-preparation-python.html
+Beberapa hal umum yang harus diperhatikan dalam proses data cleaning:
+- Konsistensi Format
+Sebuah variabel mungkin tidak memiliki format yang konsisten seperti penulisan tanggal 10-okt-2020 vs 10/10/20, format jam yang berbeda 17.10 vs 5.10 pm, dll. Data dengan format berbeda tidak akan bisa diolah oleh model ML. Solusinya, format data harus disamakan dan dibuat konsisten terlebih dahulu.
+- Skala data
+Jika sebuah variabel memiliki jangka dari 1 samapi 100, pastikan tidak ada data yang lebih dari 100. Untuk data numerik, jika sebuah variabel merupakan bilangan positif, maka pastikan tidak ada bilangan negatif.
+- Duplikasi data 
+Data yang memiliki duplikat akan mempengaruhi model ML, apalagi jika data duplikat tersebut besar jumlahnya. Untuk itu kita harus memastikan tidak ada data yang terduplikasi.
+- Missing value 
+Missing value terjadi ketika data dari sebuah record tidak lengkap. Ada 2 opsi untuk mengatasi Missing Value, yaitu menghilangkan data MV atau mengganti nilai yang hilang dengan nilai lain.
+- Skewness distribution
+Skewness adalah kondisi di mana dataset cenderung memiliki distribusi data yang tidak seimbang. Skewness akan mempengaruhi data dengan menciptakan bias terhadap model. Apa itu bias? Sebuah model cenderung memprediksi sesuatu karena ia lebih sering mempelajari hal tersebut. Misalkan ada sebuah model untuk pengenalan buah di mana jumlah buah jeruk 92 buah dan apel 8 buah. Distribusi yang tidak imbang ini akan mengakibatkan model lebih cenderung memprediksi jeruk darpada apel. Cara paling simple untuk mengatasi skewness adalah dengan menyamakan proporsi kelas mayoritas dengan kelas minoritas. 
+
+3) Data processing : pada tahap ini, setelah data diambil dari sumber tertentu, ia dimasukkan pada suatu environment dan kemudian data diproses agar bisa diolah oleh model ML. 
+
+4) Data preparation 
+Biasanya, dataset terdiri dari 2 jenis data, yaitu : kategori (string) dan numerik (angka). Umumnya, model ML tidak dapat mengolah data kategori sehingga perlu dilakukan konversi data kategori menjadi data numerik. Salah satu teknik untuk mengubah data kategori menjadi data numerik adalah dengan menggunakan One Hot Encoding atau yang juga dikenal sebagai dummy variables. One Hot Encoding mengubah data kategori dengan membuat kolom baru untuk setiap kategori.
+Selain konversi data kategori menjadi numerik, ada beberapa teknik lain dalam data preparation. Teknik yang akan dibahas antara lain membuang outlier, normalization, dan standardization.
+- Outlier removal
+Outlier adalah sebuah nilai yang jauh berbeda dari kumpulan nilai lainnya dan dapat mengacaukan hasil dari sebuah analisis statistik. Outlier dapat disebabkan oleh kesalahan dalam pengumpulan data atau nilai tersebut benar ada dan memang unik dari kumpulan nilai lainnya. Salah satu cara termudah untuk mengecek apakah terdapat outlier dalam data kita adalah dengan melakukan visualisasi. 
+- Normalization
+Tujuan dari normalisasi adalah mengubah nilai-nilai dari sebuah fitur ke dalam skala yang sama. Normalization memungkinkan kenaikan performa dan stabilitas dari sebuah model ML. Salah satu contoh dari normalization adalah min-max scalling di mana nilai-nilai dipetakan ke dalam skala 0 samapi 1. SKLearn menyediakan library untuk normalization.
+MinMaxScaler
