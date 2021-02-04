@@ -72,3 +72,39 @@ Outlier adalah sebuah nilai yang jauh berbeda dari kumpulan nilai lainnya dan da
 - Normalization
 Tujuan dari normalisasi adalah mengubah nilai-nilai dari sebuah fitur ke dalam skala yang sama. Normalization memungkinkan kenaikan performa dan stabilitas dari sebuah model ML. Salah satu contoh dari normalization adalah min-max scalling di mana nilai-nilai dipetakan ke dalam skala 0 samapi 1. SKLearn menyediakan library untuk normalization.
 MinMaxScaler
+https://scikit-learn.org/0.16/modules/generated/sklearn.preprocessing.MinMaxScaler.html
+- Standardization
+Standardization adalah proses konversi nilai-nilai dari suatu fitur sehingga nilai-nilai tersebut memiliki skala yang sama. Z score adalah metode yang paling populer untuk standardisasi di mana setiap nilai pada sebuah atribut numerik akan dikurangi dengan rata-rata dan dibagi dengan standar deviasei dari seluruh nilai pada sebuah kolom atribut.
+z = value - mean / standard deviation
+Fungsi standardisasi itu serupa dengan normalization. Keduanya berfungsi menyamakan skala nilai dari tiap atribut pada data. SKLearn menyediakan library untuk mengaplikasikan standar scaler pada data.
+Link lebih lanjut tentang standardization : https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html
+
+
+Data Storage/Warehouse
+Data warehouse berevolusi dari penyimpanan informasi pendukung platform business intelligence menjadi infrastruktur analitis luas yang mendukung berbagai macam aplikasi.
+Macam-macam tools:
+- RDBMS (Relational Database Management System)
+Merupakan sistem yang mendukung adanya hubungan atau relasi antar tabel pada suatu database. Setiap tabel dihubungkan dengan tabel lainnya dengan menggunakan primary key dan foreign key. Jenis database yang menerapkan RDBMS adalah MySQL, PostgreSQL, dan Microsoft SQL Server.
+- NoSQL
+Merupakan jenis basis data yang tidak menggunakan bahasa SQL dalam manipulasi datanya. Dalam penyimpanan datanya, NoSQL memiliki beberapa teknik penyimpanan yaitu : 
+>dokumen: menghubungkan setiap kunci dengan struktur data kompleks yang disebut dokumen
+>graph: menyimpan informasi tentang jaringan data, seperti koneksi sosial
+>key-value: database NoSQL paling sederhana di mana setiap elemen dalam database disimpan sebagai nilai yang diasosiasikan dengan sebuah kunci
+>column based: menyimpan data yang memiliki volume besar, dimana setiap elemen data disimpan pada kolom bukan baris
+Beberapa database NoSQL terpopuler adalah MongoDB, COuchDB, Cassandra, Redis, Neo4J, dan Riak. Link lebih lanjut tentang NoSQL : https://www.quora.com/What-are-the-main-differences-between-the-four-types-of-NoSql-databases-KeyValue-Store-Column-Oriented-Store-Document-Oriented-Graph-Database
+
+Firebase Realtime Database
+FRD adalah database berbasis cloud yang didesain khusus untuk mengelola data realtime. FRD dapat menyimpan dan melakukan sinkronisasi data secara realtime di mana setiap kali ada perubahan data baru, FRD langsung menyimpannya pada Cloud. FRD juga dilengkapi fitur offline di mana ketika tidak ada koneksi internet, FRD akan menyimpan data secara lokal, kemudian saat online, akan melakukan sinkronisasi ke Cloud.
+
+Spark 
+Apache Spark adalah perangkat lunak untuk pemrosesan dan analisis data berskala besar. Spark dapat digunakan dalam proses ETL (Extract, Transform, Load), data streaming, perhitungan grafik, SQL, dan machine learning. Untuk ML Spark menyediakan MLlib yang berisi implementasi model ML seperti klasifikasi, regresi, pengklasteran, penurunan dimensi, dan pemfilteran kolaboratif.
+
+Big Query
+Big Query adalah data warehouse berbasis cloud untuk perusahaan yang menawarkan penyimpanan data berbasis SQL dan analisis data berukuran besar. Karena berbasis cloud dan tidak ada infrastruktur yang perlu dikelola, pengguna dapat berfokus pada pengolahan data tanpa memerlukan seorang administrator database. 
+
+Training set dan Test set
+Pilihan yang lebih baik adalah dengan membagi dataset menjadi 2 bagian yaitu data training dan data testing. Pada praktiknya, pembagian data training dan data testing yang paling umum adalah 80:20, 70:30, atau 60:40, tergantung dari ukuran atau jumlah data.
+Proses shuffling sebelum pemisahan dataset dilakukan untuk menjaga rasio informasi pada data training dan testing tetap berimbang.
+
+ 
+
